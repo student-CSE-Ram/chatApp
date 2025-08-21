@@ -1,18 +1,29 @@
-import { useState } from 'react'
-// import Chat from './pages/Chat'
+// import React from "react";
+// import { SocketProvider } from "./context/SocketContext";
+// import ChatPage from "./pages/ChatPage";
 
-import './App.css'
-import WhatsAppUI from './pages/WhatsappUI'
+// function App() {
+//   return (
+//     <SocketProvider>
+//       <ChatPage />
+//     </SocketProvider>
+//   );
+// }
 
-function App() {
-  
+// export default App;
+
+
+// src/App.jsx
+import React from "react";
+import { SocketProvider } from "./context/SocketContext";
+import WhatsAppChatPage from "./pages/WhatsAppChatPage";
+// import ChatPage from "./pages/ChatPage"; // your old page remains intact
+
+export default function App() {
   return (
-    <div className='chat'>
-      {/* <Chat /> */}
-      <WhatsAppUI />
-    </div>
-  )
-    
+    <SocketProvider>
+      <WhatsAppChatPage />
+       {/* <ChatPage />  */}
+    </SocketProvider>
+  );
 }
-
-export default App
